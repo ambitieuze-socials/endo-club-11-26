@@ -1,15 +1,15 @@
 import LogoMark from './LogoMark'
 
 const communityLinks = [
-  { href: '#community', label: 'Over de Community' },
-  { href: '#app', label: 'De App' },
-  { href: '#cta', label: 'Word lid' },
+  { href: '/#community', label: 'Over de Community' },
+  { href: '/#app', label: 'De App' },
+  { href: '/#cta', label: 'Word lid' },
 ]
 
 const informatieLinks = [
-  { href: '#about', label: 'Wat is Endo?' },
-  { href: '#amy', label: 'Over Amy' },
-  { href: '#goeddoel', label: 'Goed Doel' },
+  { href: '/over-endo', label: 'Wat is Endo?' },
+  { href: '/#amy', label: 'Over Amy' },
+  { href: '/#goeddoel', label: 'Goed Doel' },
   { href: '#', label: 'Pers & Media' },
 ]
 
@@ -41,13 +41,13 @@ function WhatsAppIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-offwhite border-t border-purple/10 py-16 px-6" role="contentinfo">
+    <footer className="bg-offwhite rounded-t-[25px] relative z-[90] mt-[-25px] border-t border-purple/10 py-16 px-6" role="contentinfo">
       <div className="max-w-5xl mx-auto">
         {/* Top grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-purple/10 mb-8">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#" className="inline-flex items-center gap-2 mb-4" aria-label="Endo Club home">
+            <a href="/" className="inline-flex items-center gap-2 mb-4" aria-label="Endo Club home">
               <LogoMark size={28} fill="#8B7EC8" />
               <span className="text-lg font-bold tracking-tight text-purple">Endo Club.</span>
             </a>

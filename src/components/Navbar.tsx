@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const navLinks = [
-  { href: '#about', label: 'Over Endo' },
-  { href: '#community', label: 'Community' },
-  { href: '#amy', label: 'Founder' },
-  { href: '#app', label: 'App' },
+  { href: '/over-endo', label: 'Over Endo', external: false },
+  { href: '#community', label: 'Community', external: true },
+  { href: '#amy', label: 'Founder', external: true },
+  { href: '#app', label: 'App', external: true },
 ]
 
 export default function Navbar({ onWordLid }: { onWordLid: () => void }) {
@@ -26,25 +27,28 @@ export default function Navbar({ onWordLid }: { onWordLid: () => void }) {
     <>
       {/* Floating pill navbar */}
       <nav
-        className="fixed left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-2xl transition-all duration-300 ease-out"
+        className="fixed left-1/2 -translate-x-1/2 z-[200] w-[calc(100%-48px)] max-w-2xl transition-all duration-300 ease-out"
         style={{ top: hidden ? '-80px' : '24px' }}
       >
         <div className="bg-white rounded-full shadow-lg px-5 py-3 flex items-center justify-between">
           {/* Brand */}
-          <a href="#" className="font-heading italic text-lg font-bold tracking-tight text-black select-none">
+          <Link to="/" className="font-heading italic text-lg font-bold tracking-tight text-black select-none">
             Endo Club.
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-6 list-none">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-sm font-medium text-brand-mid hover:text-purple transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
+                {link.external ? (
+                  <a href={link.href} className="text-sm font-medium text-brand-mid hover:text-purple transition-colors duration-200">
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link to={link.href} className="text-sm font-medium text-brand-mid hover:text-purple transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -91,13 +95,15 @@ export default function Navbar({ onWordLid }: { onWordLid: () => void }) {
           <ul className="list-none py-3">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-6 py-3 text-sm font-medium text-brand-mid hover:text-purple hover:bg-purple/5 transition-colors duration-150"
-                >
-                  {link.label}
-                </a>
+                {link.external ? (
+                  <a href={link.href} onClick={() => setOpen(false)} className="block px-6 py-3 text-sm font-medium text-brand-mid hover:text-purple hover:bg-purple/5 transition-colors duration-150">
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link to={link.href} onClick={() => setOpen(false)} className="block px-6 py-3 text-sm font-medium text-brand-mid hover:text-purple hover:bg-purple/5 transition-colors duration-150">
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li className="px-4 pb-2 pt-1">
@@ -115,7 +121,7 @@ export default function Navbar({ onWordLid }: { onWordLid: () => void }) {
       {/* Overlay for mobile — close on outside click */}
       {open && (
         <div
-          className="fixed inset-0 z-40 md:hidden"
+          className="fixed inset-0 z-[199] md:hidden"
           onClick={() => setOpen(false)}
           aria-hidden="true"
         />

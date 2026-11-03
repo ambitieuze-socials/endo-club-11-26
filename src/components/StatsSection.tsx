@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { ComposableMap, Geographies, Geography, Sphere } from 'react-simple-maps'
 import worldAtlas from 'world-atlas/countries-110m.json'
 
-const EUROPE_IDS = new Set([40,56,70,100,112,191,196,203,208,233,246,250,276,300,348,352,372,380,428,440,442,470,498,499,528,578,616,620,642,688,703,705,724,752,756,804,807,826])
 
 function useInView(threshold = 0.35) {
   const ref = useRef<HTMLDivElement>(null)
@@ -129,7 +128,7 @@ function WorldMapCard() {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={EUROPE_IDS.has(Number(geo.id)) ? '#8B7EC8' : '#C4B0E0'}
+                  fill="#8B7EC8"
                   stroke="#FFFCF8"
                   strokeWidth={0.5}
                   style={{ outline: 'none' }}
@@ -149,7 +148,7 @@ function WorldMapCard() {
 
 export default function StatsSection() {
   return (
-    <section className="bg-offwhite py-20" aria-label="Feiten over endometriose">
+    <section className="bg-offwhite relative z-10 py-20" aria-label="Feiten over endometriose">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row gap-4">
           <DotsCard />

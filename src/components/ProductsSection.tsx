@@ -17,7 +17,7 @@ const products: Product[] = [
     emoji: '🌿',
     title: 'Comfort Care Box',
     description:
-      'Een zorgvuldig samengestelde box met comfortproducten, snacks en self-care items — speciaal voor zware dagen.',
+      'Een zorgvuldig samengestelde box met comfortproducten, snacks en self-care items, speciaal voor zware dagen.',
     gradientClass: 'from-[#E4EDF5] to-[#D4E8F0]',
   },
   {
@@ -48,7 +48,7 @@ export default function ProductsSection() {
           </h2>
           <p className="text-brand-mid text-base leading-relaxed max-w-lg">
             Speciaal ontwikkeld voor vrouwen met endometriose. Producten die je helpen op
-            moeilijke dagen — met liefde gemaakt door iemand die het zelf begrijpt.
+            moeilijke dagen, met liefde gemaakt door iemand die het zelf begrijpt.
           </p>
         </div>
 

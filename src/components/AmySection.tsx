@@ -22,7 +22,7 @@ export default function AmySection() {
     <section
       id="amy"
       ref={ref}
-      className="bg-offwhite py-20 md:py-32 px-6"
+      className="bg-offwhite rounded-t-[25px] relative z-40 mt-[-25px] py-20 md:py-32 px-6"
       aria-label="Over Amy Jalloh"
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -70,7 +70,7 @@ export default function AmySection() {
           <p style={fadeUp(240)} className="text-brand-mid text-sm sm:text-base leading-[1.8] mb-3">
             Amy Jalloh weet als geen ander hoe het is om met endometriose te leven. Na jaren van
             zoeken, pijn en onbegrip werd bij haar de diagnose gesteld. Dit veranderde haar leven
-            — maar ook haar missie.
+            en ook haar missie.
           </p>
           <p style={fadeUp(270)} className="text-brand-mid text-sm sm:text-base leading-[1.8] mb-3">
             Als ambassadeur voor endometriose zet Amy zich actief in voor meer bewustwording,
@@ -87,7 +87,7 @@ export default function AmySection() {
 
           <p style={fadeUp(350)} className="text-brand-mid text-sm sm:text-base leading-[1.8]">
             Met Endo Club bouwt Amy aan een community die niet alleen steun biedt, maar ook actief
-            bijdraagt aan de strijd tegen endometriose — met 10% van alle inkomsten naar onderzoek
+            bijdraagt aan de strijd tegen endometriose, met 10% van alle inkomsten naar onderzoek
             en bewustwording.
           </p>
         </div>

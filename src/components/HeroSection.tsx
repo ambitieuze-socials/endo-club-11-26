@@ -20,7 +20,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="h-screen overflow-hidden mb-[-25px] relative"
+      className="h-screen overflow-hidden relative"
       aria-label="Hero sectie"
     >
       {/* Video background */}
@@ -38,13 +38,13 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-brand-dark/10" aria-hidden="true" />
 
       {/* Bottom-aligned content */}
-      <div className="absolute inset-0 flex flex-col justify-end pb-28 md:pb-36 items-center text-center px-6">
+      <div className="absolute inset-0 flex flex-col justify-center md:justify-end pb-0 md:pb-36 items-center text-center px-6">
         {/* Eyebrow badge */}
         <div
           style={anim(0)}
-          className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/60 px-5 py-2 rounded-full text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5A4E98] mb-7 select-none"
+          className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-md border border-white/60 px-4 sm:px-5 py-2 rounded-full text-[0.6rem] sm:text-[0.72rem] font-bold tracking-[0.05em] sm:tracking-[0.09em] uppercase text-[#5A4E98] mb-7 select-none whitespace-nowrap"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-pink inline-block" aria-hidden="true" />
+          <span className="w-1.5 h-1.5 rounded-full bg-pink inline-block shrink-0" aria-hidden="true" />
           Community voor vrouwen met endometriose
         </div>
 

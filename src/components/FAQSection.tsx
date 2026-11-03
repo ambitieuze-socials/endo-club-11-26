@@ -9,7 +9,7 @@ const faqs: { question: string; answer: string; whatsapp?: boolean; mail?: boole
   {
     question: 'Voor wie is Endo Club bedoeld?',
     answer:
-      'Endo Club is er voor vrouwen die leven met endometriose — of je nu net je diagnose hebt gekregen of al jaren onderweg bent. Ook als je vermoedt dat je endo hebt maar nog geen officiële diagnose, ben je van harte welkom.',
+      'Endo Club is er voor vrouwen die leven met endometriose, of je nu net je diagnose hebt gekregen of al jaren onderweg bent. Ook als je vermoedt dat je endo hebt maar nog geen officiële diagnose, ben je van harte welkom.',
   },
   {
     question: 'Is het gratis om lid te worden?',
@@ -20,7 +20,7 @@ const faqs: { question: string; answer: string; whatsapp?: boolean; mail?: boole
   {
     question: 'Wanneer komt de app?',
     answer:
-      'We werken hard aan de lancering. Schrijf je in op de waitlist en je bent de eerste die het hoort — plus je krijgt vroegboekersvoordelen zodra de app live gaat.',
+      'We werken hard aan de lancering. Schrijf je in op de waitlist en je bent de eerste die het hoort. Je krijgt vroegboekersvoordelen zodra de app live gaat.',
     waitlist: true,
   },
   {
@@ -37,7 +37,7 @@ const faqs: { question: string; answer: string; whatsapp?: boolean; mail?: boole
   {
     question: 'Hoe kan ik contact opnemen?',
     answer:
-      'Stuur ons een berichtje via Instagram of mail ons direct. We reageren zo snel mogelijk — we zijn tenslotte ook gewoon mensen met endo.',
+      'Stuur ons een berichtje via Instagram of mail ons direct. We reageren zo snel mogelijk, want we zijn tenslotte ook gewoon mensen met endo.',
     mail: true,
   },
 ]
@@ -139,7 +139,7 @@ export default function FAQSection() {
     <section
       id="faq"
       ref={ref}
-      className="bg-offwhite py-20 md:py-32 px-6"
+      className="bg-offwhite rounded-t-[25px] relative z-[70] mt-[-25px] py-20 md:py-32 px-6"
       aria-label="Veelgestelde vragen"
     >
       <div className="max-w-3xl mx-auto">

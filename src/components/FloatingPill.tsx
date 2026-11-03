@@ -54,19 +54,15 @@ export default function FloatingPill({ open, setOpen }: { open: boolean; setOpen
 
   return (
     <>
-      {/* Floating pill — fixed bottom-left */}
+      {/* Desktop: floating pill bottom-left */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 z-50 inline-flex items-center gap-3 bg-white/90 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_rgba(100,80,140,0.18)] rounded-full pl-1.5 pr-5 py-1.5 hover:scale-105 transition-transform duration-200 cursor-pointer"
+        className="hidden md:inline-flex fixed bottom-6 left-6 z-[200] items-center gap-3 bg-white/90 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_rgba(100,80,140,0.18)] rounded-full pl-1.5 pr-5 py-1.5 hover:scale-105 transition-transform duration-200 cursor-pointer"
         aria-label="Community opties"
       >
         <div className="flex -space-x-2 shrink-0">
           {avatars.slice(0, 4).map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt=""
-              aria-hidden="true"
+            <img key={i} src={src} alt="" aria-hidden="true"
               className="w-8 h-8 rounded-full object-cover object-top border-2 border-white shrink-0"
             />
           ))}
@@ -76,10 +72,31 @@ export default function FloatingPill({ open, setOpen }: { open: boolean; setOpen
         </span>
       </button>
 
+      {/* Mobile: full-width bottom bar */}
+      <button
+        onClick={() => setOpen(true)}
+        className="md:hidden fixed bottom-0 left-0 right-0 z-[200] flex items-center gap-3 bg-white/90 backdrop-blur-md border-t border-white/60 shadow-[0_-4px_24px_rgba(100,80,140,0.12)] px-5 py-3.5 cursor-pointer"
+        aria-label="Community opties"
+      >
+        <div className="flex -space-x-2 shrink-0">
+          {avatars.slice(0, 4).map((src, i) => (
+            <img key={i} src={src} alt="" aria-hidden="true"
+              className="w-8 h-8 rounded-full object-cover object-top border-2 border-white shrink-0"
+            />
+          ))}
+        </div>
+        <span className="text-brand-dark text-xs font-medium flex-1 text-left">
+          +246 vrouwen doen al mee
+        </span>
+        <span className="bg-brand-dark text-white text-xs font-semibold px-4 py-2 rounded-full shrink-0">
+          Aanmelden
+        </span>
+      </button>
+
       {/* Backdrop */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center px-6"
+          className="fixed inset-0 z-[200] bg-black/30 backdrop-blur-sm flex items-center justify-center px-6"
           onClick={() => setOpen(false)}
         >
           {/* Modal card */}

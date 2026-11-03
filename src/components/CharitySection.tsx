@@ -83,7 +83,7 @@ export default function CharitySection() {
   return (
     <section
       id="goeddoel"
-      className="bg-[#F5F0E8] py-16 md:py-24 px-6 overflow-hidden"
+      className="bg-[#F5F0E8] rounded-t-[25px] relative z-[60] mt-[-25px] py-16 md:py-24 px-6 overflow-hidden"
       aria-label="Goed doel"
     >
       <div className="max-w-6xl mx-auto">

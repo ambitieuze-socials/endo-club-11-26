@@ -113,7 +113,7 @@ export default function AppSection() {
     <section
       id="app"
       ref={ref}
-      className="relative overflow-hidden py-20 md:py-32 px-6"
+      className="relative overflow-hidden rounded-t-[25px] z-50 mt-[-25px] py-20 md:py-32 px-6"
       style={{ background: 'linear-gradient(135deg, #BFB0E0 0%, #D8A8C0 100%)' }}
       aria-label="De Endo Club App"
     >

@@ -22,12 +22,12 @@ export default function App() {
       <HeroSection />
       <StatsSection />
       <AboutSection />
-      <CommunitySection />
+      <CommunitySection onWordLid={() => setCommunityOpen(true)} />
       <AmySection />
       <AppSection />
       <CharitySection />
       <FAQSection />
-      <CTASection />
+      <CTASection onOpen={() => setCommunityOpen(true)} />
       <Footer />
       <FloatingPill open={communityOpen} setOpen={setCommunityOpen} />
       <ScrollToTop />

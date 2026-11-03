@@ -16,19 +16,19 @@ const cards: CommunityCard[] = [
     title: 'Herkenning & begrip',
     image: herkenning,
     description:
-      'Praat met vrouwen die precies weten wat jij doormaakt. Geen medeleven van buitenaf — échte herkenning van binnenuit.',
+      'Praat met vrouwen die precies weten wat jij doormaakt. Geen medeleven van buitenaf, maar échte herkenning van binnenuit.',
   },
   {
     title: 'Kennis & informatie',
     image: kennis,
     description:
-      'Toegang tot betrouwbare informatie over endometriose, behandelingen, voeding en lifestyle — samengesteld door experts en ervaringsdeskundigen.',
+      'Toegang tot betrouwbare informatie over endometriose, behandelingen, voeding en lifestyle. Samengesteld door experts en ervaringsdeskundigen.',
   },
   {
     title: 'Je staat er niet alleen voor',
     image: nietAlleen,
     description:
-      'Onze eigen WhatsApp groep waar je altijd terechtkan — voor vragen, steun, of gewoon even ventileren bij mensen die het écht begrijpen.',
+      'Onze eigen WhatsApp groep waar je altijd terechtkan. Voor vragen, steun, of gewoon even ventileren bij mensen die het écht begrijpen.',
   },
   {
     title: 'Events & bijeenkomsten',
@@ -38,7 +38,7 @@ const cards: CommunityCard[] = [
   },
 ]
 
-export default function CommunitySection() {
+export default function CommunitySection({ onWordLid }: { onWordLid: () => void }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState<boolean[]>(cards.map(() => false))
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -90,7 +90,7 @@ export default function CommunitySection() {
   return (
     <section
       id="community"
-      className="relative bg-purple py-20 md:py-32 px-6"
+      className="relative bg-purple rounded-t-[25px] z-30 mt-[-25px] py-20 md:py-32 px-6"
       aria-label="Community functies"
     >
       {/* Subtle radial gradient overlay */}
@@ -138,12 +138,12 @@ export default function CommunitySection() {
               <p className="text-white/50 text-sm leading-relaxed mb-5">
                 Word lid van de community en ontdek alles wat Endo Club te bieden heeft.
               </p>
-              <a
-                href="#cta"
+              <button
+                onClick={onWordLid}
                 className="inline-flex items-center bg-white text-brand-dark text-sm font-semibold px-6 py-3 rounded-full hover:bg-offwhite transition-colors duration-200"
               >
                 Word lid
-              </a>
+              </button>
             </div>
           </div>
 
@@ -190,12 +190,12 @@ export default function CommunitySection() {
 
             {/* Mobile CTA */}
             <div className="lg:hidden mt-4 text-center">
-              <a
-                href="#cta"
+              <button
+                onClick={onWordLid}
                 className="inline-flex items-center bg-white text-brand-dark text-sm font-semibold px-6 py-3 rounded-full hover:bg-offwhite transition-colors duration-200"
               >
                 Word lid
-              </a>
+              </button>
             </div>
           </div>
         </div>
