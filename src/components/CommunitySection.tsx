@@ -90,7 +90,7 @@ export default function CommunitySection({ onWordLid }: { onWordLid: () => void 
   return (
     <section
       id="community"
-      className="relative bg-purple rounded-t-[25px] z-30 mt-[-25px] py-20 md:py-32 px-6 overflow-hidden"
+      className="relative bg-purple rounded-t-[25px] z-30 mt-[-25px] py-20 md:py-32 px-6"
       aria-label="Community functies"
     >
       {/* Subtle radial gradient overlay */}
@@ -148,7 +148,7 @@ export default function CommunitySection({ onWordLid }: { onWordLid: () => void 
           </div>
 
           {/* Right scrolling cards */}
-          <div className="flex-1 flex flex-col gap-6">
+          <div className="flex-1 flex flex-col gap-6 overflow-hidden">
             {cards.map((card, i) => (
               <div
                 key={i}
