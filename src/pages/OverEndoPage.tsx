@@ -354,6 +354,11 @@ export default function OverEndoPage() {
   const lastY = useRef(0)
 
   useEffect(() => {
+    document.title = 'Wat is endometriose? | Endo Club'
+    return () => { document.title = 'Endo Club | Jij hoort erbij' }
+  }, [])
+
+  useEffect(() => {
     function onScroll() {
       const y = window.scrollY
       setNavHidden(y > lastY.current && y > 80)

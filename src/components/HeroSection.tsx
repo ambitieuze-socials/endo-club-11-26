@@ -21,6 +21,7 @@ export default function HeroSection() {
   return (
     <section
       className="h-screen overflow-hidden relative"
+      style={{ background: 'linear-gradient(135deg, #BFB0E0 0%, #D8A8C0 100%)' }}
       aria-label="Hero sectie"
     >
       {/* Video background */}

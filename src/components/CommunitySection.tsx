@@ -90,7 +90,7 @@ export default function CommunitySection({ onWordLid }: { onWordLid: () => void 
   return (
     <section
       id="community"
-      className="relative bg-purple rounded-t-[25px] z-30 mt-[-25px] py-20 md:py-32 px-6"
+      className="relative bg-purple rounded-t-[25px] z-30 mt-[-25px] py-20 md:py-32 px-6 overflow-hidden"
       aria-label="Community functies"
     >
       {/* Subtle radial gradient overlay */}
