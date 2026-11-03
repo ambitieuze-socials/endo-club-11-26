@@ -105,6 +105,15 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 rounded-full bg-purple shrink-0" />
               10% naar endometriose-onderzoek
             </span>
+            <span className="hidden sm:block text-brand-light/30 text-sm">·</span>
+            <a
+              href="https://plannerplus.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-light/60 text-xs hover:text-purple transition-colors duration-200"
+            >
+              Powered by PlannerPlus
+            </a>
           </div>
 
           {/* Social buttons — alleen Instagram & WhatsApp */}

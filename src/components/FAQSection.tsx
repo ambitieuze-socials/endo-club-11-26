@@ -1,11 +1,17 @@
 import { useState } from 'react'
-import { ChevronDown, Mail } from 'lucide-react'
+import { ChevronDown, Mail, ArrowRight } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 import WaitlistPill from './WaitlistPill'
 
 const WHATSAPP_URL = 'https://chat.whatsapp.com/'
 
-const faqs: { question: string; answer: string; whatsapp?: boolean; mail?: boolean; waitlist?: boolean }[] = [
+const faqs: { question: string; answer: string; whatsapp?: boolean; mail?: boolean; waitlist?: boolean; overEndo?: boolean }[] = [
+  {
+    question: 'Wat is endometriose?',
+    answer:
+      'Endometriose is een chronische aandoening waarbij weefsel dat lijkt op het baarmoederslijmvlies buiten de baarmoeder groeit. Dit veroorzaakt ontstekingen, verklevingen en vaak hevige pijn — vooral tijdens de menstruatie. Wereldwijd heeft 1 op de 10 vrouwen endometriose, maar een diagnose duurt gemiddeld 7 tot 10 jaar.',
+    overEndo: true,
+  },
   {
     question: 'Voor wie is Endo Club bedoeld?',
     answer:
@@ -77,7 +83,21 @@ function WhatsAppButton() {
   )
 }
 
-function FAQItem({ question, answer, whatsapp, mail, waitlist, delay }: { question: string; answer: string; whatsapp?: boolean; mail?: boolean; waitlist?: boolean; delay: number }) {
+function OverEndoButton() {
+  return (
+    <a
+      href="/over-endo"
+      className="inline-flex items-center gap-2.5 bg-brand-dark text-white rounded-full pl-2 pr-5 py-2 text-sm font-semibold hover:opacity-70 transition-opacity duration-200 mt-3 mb-5"
+    >
+      <span className="w-7 h-7 bg-white/15 rounded-full flex items-center justify-center shrink-0">
+        <ArrowRight size={13} />
+      </span>
+      Lees alles over endometriose
+    </a>
+  )
+}
+
+function FAQItem({ question, answer, whatsapp, mail, waitlist, overEndo, delay }: { question: string; answer: string; whatsapp?: boolean; mail?: boolean; waitlist?: boolean; overEndo?: boolean; delay: number }) {
   const [open, setOpen] = useState(false)
   const { ref, inView } = useInView<HTMLDivElement>()
 
@@ -115,9 +135,10 @@ function FAQItem({ question, answer, whatsapp, mail, waitlist, delay }: { questi
           opacity: open ? 1 : 0,
         }}
       >
-        <p className="text-brand-mid text-base leading-relaxed pt-0.5 max-w-2xl" style={{ paddingBottom: whatsapp ? '0' : '1.25rem' }}>
+        <p className="text-brand-mid text-base leading-relaxed pt-0.5 max-w-2xl" style={{ paddingBottom: (whatsapp || mail || waitlist || overEndo) ? '0' : '1.25rem' }}>
           {answer}
         </p>
+        {overEndo && <OverEndoButton />}
         {whatsapp && <WhatsAppButton />}
         {mail && <MailButton />}
         {waitlist && <div className="mt-3 mb-5"><WaitlistPill /></div>}
@@ -155,7 +176,7 @@ export default function FAQSection() {
 
         <div style={fadeUp(150)}>
           {faqs.map((faq, i) => (
-            <FAQItem key={i} question={faq.question} answer={faq.answer} whatsapp={faq.whatsapp} mail={faq.mail} waitlist={faq.waitlist} delay={i * 50} />
+            <FAQItem key={i} question={faq.question} answer={faq.answer} whatsapp={faq.whatsapp} mail={faq.mail} waitlist={faq.waitlist} overEndo={faq.overEndo} delay={i * 50} />
           ))}
         </div>
 

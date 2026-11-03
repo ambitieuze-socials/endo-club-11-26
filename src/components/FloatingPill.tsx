@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState, useEffect, type FormEvent } from 'react'
 import { X, ArrowRight, Check } from 'lucide-react'
 import amyPhoto from '../../img/amy.jpg'
 
@@ -34,6 +34,8 @@ function EmailForm() {
     <form onSubmit={handleSubmit} className="flex gap-2">
       <input
         type="email"
+        inputMode="email"
+        autoComplete="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
         placeholder="jouw@email.nl"
@@ -51,6 +53,11 @@ function EmailForm() {
 }
 
 export default function FloatingPill({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
 
   return (
     <>
@@ -101,7 +108,7 @@ export default function FloatingPill({ open, setOpen }: { open: boolean; setOpen
         >
           {/* Modal card */}
           <div
-            className="relative bg-white rounded-3xl shadow-[0_24px_64px_rgba(100,80,140,0.22)] p-8 w-full max-w-sm text-center"
+            className="relative bg-white rounded-3xl shadow-[0_24px_64px_rgba(100,80,140,0.22)] p-8 w-full max-w-sm text-center overflow-y-auto max-h-[90dvh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}

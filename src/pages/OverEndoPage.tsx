@@ -354,8 +354,9 @@ export default function OverEndoPage() {
   const lastY = useRef(0)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     document.title = 'Wat is endometriose? | Endo Club'
-    return () => { document.title = 'Endo Club | Jij hoort erbij' }
+    return () => { document.title = 'Endo Club | Dé community voor vrouwen met endometriose' }
   }, [])
 
   useEffect(() => {

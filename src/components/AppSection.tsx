@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type FormEvent } from 'react'
+import { useState, useRef, type FormEvent } from 'react'
 import { Check, Plus, X, ArrowRight } from 'lucide-react'
 import endoMockup from '../../img/endo-club-mockup.png'
 import heroVideo from '../../img/hero-video/Gradient Lab 002.mp4'
@@ -9,10 +9,6 @@ function AppWaitlistPill() {
   const [email, setEmail] = useState('')
   const [done, setDone] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 320)
-  }, [open])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -67,16 +63,19 @@ function AppWaitlistPill() {
           <input
             ref={inputRef}
             type="email"
+            inputMode="email"
+            autoComplete="email"
+            required
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="jouw@email.nl"
-            className="bg-white/30 text-white placeholder:text-white/55 text-sm outline-none rounded-full pl-3 pr-9 py-1.5 w-full"
+            className="bg-white/30 text-white placeholder:text-white/55 text-sm outline-none rounded-full pl-3 pr-10 py-1.5 w-full"
           />
           <button
             type="submit"
-            className="absolute right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center hover:bg-offwhite transition-colors shrink-0"
+            className="absolute right-0.5 w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-offwhite transition-colors shrink-0"
           >
-            <ArrowRight size={11} className="text-purple-deep" />
+            <ArrowRight size={13} className="text-purple-deep" />
           </button>
         </div>
       </form>
