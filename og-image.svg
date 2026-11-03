@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="25%" stop-color="#FFFCF8" stop-opacity="0"/>
+      <stop offset="82%" stop-color="#FFFCF8" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FFFCF8"/>
+
+  <!-- World map — muted brand purple -->
+  <g fill="#C4B0E0" opacity="0.45">
+
+    <!-- Greenland -->
+    <path d="M 441,65 L 505,58 L 545,80 L 535,115 L 490,122 L 450,118 L 441,95 Z"/>
+
+    <!-- North America -->
+    <path d="M 87,128 L 96,111 L 123,91 L 175,87 L 225,87 L 307,89 L 360,98 L 392,110
+             L 432,143 L 408,147 L 386,152 L 370,169 L 356,191 L 346,200 L 325,210
+             L 319,215 L 330,228 L 279,202 L 264,195 L 243,180 L 221,158 L 221,141
+             L 225,128 L 215,118 L 195,112 L 165,108 L 130,97 Z"/>
+
+    <!-- South America -->
+    <path d="M 330,228 L 368,288 L 398,283 L 430,285 L 458,292 L 470,305 L 480,330
+             L 480,358 L 470,385 L 448,408 L 420,422 L 385,408 L 370,365 L 350,340
+             L 338,310 L 308,295 L 295,275 L 300,258 L 310,238 L 330,228 Z"/>
+
+    <!-- Europe -->
+    <path d="M 572,168 L 578,158 L 592,150 L 591,132 L 600,122 L 618,115 L 625,98
+             L 648,85 L 678,80 L 695,92 L 682,110 L 672,112 L 660,122 L 658,132
+             L 665,145 L 682,162 L 668,168 L 650,168 L 638,182 L 622,188 L 608,175
+             L 598,180 L 582,174 Z"/>
+
+    <!-- Africa -->
+    <path d="M 572,172 L 628,168 L 668,178 L 678,185 L 692,212 L 722,230 L 725,245
+             L 710,275 L 698,305 L 678,332 L 655,358 L 618,368 L 588,360 L 558,332
+             L 538,292 L 532,248 L 545,228 L 542,210 L 558,190 Z"/>
+
+    <!-- Asia (main body) -->
+    <path d="M 708,172 L 728,165 L 738,154 L 762,150 L 802,138 L 852,118 L 902,105
+             L 952,98 L 1022,90 L 1082,85 L 1138,98 L 1150,95 L 1148,118 L 1095,135
+             L 1052,152 L 1012,168 L 968,200 L 942,222 L 920,252 L 898,258 L 872,252
+             L 855,242 L 825,212 L 800,200 L 775,192 L 748,198 L 720,202 L 710,188 Z"/>
+
+    <!-- Arabian Peninsula -->
+    <path d="M 720,202 L 752,240 L 748,262 L 728,258 L 708,232 L 698,208 Z"/>
+
+    <!-- Indian Subcontinent -->
+    <path d="M 825,212 L 848,208 L 862,222 L 870,248 L 842,272 L 820,260 L 810,235 Z"/>
+
+    <!-- SE Asia -->
+    <path d="M 942,222 L 965,202 L 982,212 L 995,228 L 985,248 L 968,255 L 952,248 Z"/>
+
+    <!-- Australia -->
+    <path d="M 952,350 L 962,318 L 978,295 L 1002,290 L 1032,285 L 1045,302 L 1058,322
+             L 1060,358 L 1045,385 L 1018,388 L 985,378 L 962,368 Z"/>
+
+    <!-- Japan -->
+    <path d="M 1012,135 L 1028,128 L 1042,138 L 1038,155 L 1022,160 Z"/>
+
+    <!-- UK / Ireland -->
+    <path d="M 574,130 L 582,122 L 588,130 L 582,142 L 572,138 Z"/>
+    <path d="M 558,132 L 564,126 L 568,133 L 562,140 Z"/>
+
+  </g>
+
+  <!-- Europe highlighted in brand purple -->
+  <path fill="#8B7EC8" opacity="0.4"
+        d="M 572,168 L 578,158 L 592,150 L 591,132 L 600,122 L 618,115 L 625,98
+           L 648,85 L 678,80 L 695,92 L 682,110 L 672,112 L 660,122 L 658,132
+           L 665,145 L 682,162 L 668,168 L 650,168 L 638,182 L 622,188 L 608,175
+           L 598,180 L 582,174 Z"/>
+
+  <!-- UK highlighted -->
+  <path fill="#8B7EC8" opacity="0.4" d="M 574,130 L 582,122 L 588,130 L 582,142 L 572,138 Z"/>
+
+  <!-- Bottom fade so text reads cleanly -->
+  <rect width="1200" height="630" fill="url(#bottomFade)"/>
+
+  <!-- Endo Club badge top-left -->
+  <rect x="60" y="48" rx="20" ry="20" width="152" height="38" fill="#2D2438"/>
+  <circle cx="84" cy="67" r="4" fill="#E08BA0"/>
+  <text x="97" y="72" fill="white"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="14" font-weight="700" letter-spacing="0.4">Endo Club</text>
+
+  <!-- Stat top-right -->
+  <text x="1140" y="75" fill="#2D2438"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32" font-weight="700" font-style="italic"
+        text-anchor="end">1 op 10 vrouwen</text>
+  <text x="1140" y="100" fill="#9188A8"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="16" text-anchor="end">heeft endometriose</text>
+
+  <!-- Main heading -->
+  <text x="60" y="528"
+        fill="#2D2438"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="108" font-style="italic" font-weight="700"
+        letter-spacing="-2">Jij hoort erbij.</text>
+
+  <!-- Subtitle -->
+  <text x="62" y="585"
+        fill="#5C4E6E"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="25">Community voor vrouwen met endometriose</text>
+</svg>
